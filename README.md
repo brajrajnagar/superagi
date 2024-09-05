@@ -12,24 +12,21 @@ Ensure you have these libraries installed:
 ```bash
 pip install pandas openpyxl PyMuPDF Pillow opencv-python numpy imutils easyocr argparse
 ```
-Here's a flow diagram for the code provided:
+## Flow Diagram:
 
 ```mermaid
 graph TD
     A[Start] --> B[Read Excel/CSV File]
-    B --> C[Filter Equipment Numbers]
-    C --> D[Extract Drawing Numbers and CML ID Tags]
-    D --> E[Create TML_dict]
-    E --> F[Scan PDF Directory]
-    F --> G[Create pdf_paths Dictionary]
-    G --> H[Convert PDFs to Images]
-    H --> I[Perform Template Matching]
-    I --> J[Extract Coordinates for Matched Templates]
-    J --> K[OCR on Image Regions]
-    K --> L[Filter OCR Results by TML_dict]
-    L --> M[Highlight Matched Regions on Images]
-    M --> N[Save Highlighted Images]
-    N --> O[End]
+    B --> C[Extract Drawing Numbers and CML ID Tags]
+    C --> D[Create TML IDs from CML ID Tags]
+    D --> E[Scan PDF Directory]
+    E --> F[Convert PDFs to Images]
+    F --> G[Perform Template Matching]
+    G --> H[Extract Coordinates for Matched Templates]
+    H --> I[OCR on Image Regions]
+    I --> J[Highlight Matched Regions on Images]
+    J --> K[Save Highlighted Images]
+    K --> L[End]
 
     style A fill:#111f5c,stroke:#333,stroke-width:4px
     style B fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
@@ -42,10 +39,7 @@ graph TD
     style I fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
     style J fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
     style K fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-    style L fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-    style M fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-    style N fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-    style O fill:#f9f,stroke:#333,stroke-width:4px
+    style L fill:#111f5c,stroke:#333,stroke-width:4px
 ```
 
 ## Usage
