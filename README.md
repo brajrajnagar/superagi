@@ -4,7 +4,7 @@ This project automates the process of identifying and verifying components on Pi
 
 ## Prerequisites
 
-- Python 3.6+
+- Python 3.10+
 - Required Python packages: `pandas`, `openpyxl` or `xlrd` for Excel files, `PyMuPDF`, `Pillow`, `opencv-python`, `numpy`, `imutils`, `easyocr`, `argparse`
 
 Ensure you have these libraries installed:
@@ -12,21 +12,41 @@ Ensure you have these libraries installed:
 ```bash
 pip install pandas openpyxl PyMuPDF Pillow opencv-python numpy imutils easyocr argparse
 ```
+Here's a flow diagram for the code provided:
 
-## Setup
+```mermaid
+graph TD
+    A[Start] --> B[Read Excel/CSV File]
+    B --> C[Filter Equipment Numbers]
+    C --> D[Extract Drawing Numbers and CML ID Tags]
+    D --> E[Create TML_dict]
+    E --> F[Scan PDF Directory]
+    F --> G[Create pdf_paths Dictionary]
+    G --> H[Convert PDFs to Images]
+    H --> I[Perform Template Matching]
+    I --> J[Extract Coordinates for Matched Templates]
+    J --> K[OCR on Image Regions]
+    K --> L[Filter OCR Results by TML_dict]
+    L --> M[Highlight Matched Regions on Images]
+    M --> N[Save Highlighted Images]
+    N --> O[End]
 
-1. **Clone the repository:**
-
-   ```bash
-   git clone <your-repository-url>
-   cd <your-repository-directory>
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
+    style A fill:#111f5c,stroke:#333,stroke-width:4px
+    style B fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style C fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style D fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style E fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style F fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style G fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style H fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style I fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style J fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style K fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style L fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style M fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style N fill:#111f5c,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style O fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ## Usage
 
@@ -69,17 +89,3 @@ python prog.py \
 
 Feel free to fork this project, make improvements, or fix bugs. Please submit pull requests with clear descriptions of your changes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contact
-
-For any questions or feedback, please open an issue on the GitHub repository or contact:
-
-- Your Name: [Your Email]
-- Project GitHub: [Your GitHub Repository URL]
-
----
-
-**Note:** Adjust paths, names, and contact information according to your project's specifics.
