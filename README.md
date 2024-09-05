@@ -79,7 +79,3 @@ python prog.py \
 - `filtered_coordinate.py`: Filters OCR results based on predefined criteria.
 - `highlighte.py`: Highlights the matched regions on images.
 
-## Contribution
-
-Feel free to fork this project, make improvements, or fix bugs. Please submit pull requests with clear descriptions of your changes.
-
