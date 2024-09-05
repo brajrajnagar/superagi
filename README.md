@@ -42,6 +42,21 @@ graph TD
     style L fill:#111f5c,stroke:#333,stroke-width:4px
 ```
 
+## Functionality Breakdown
+
+1. **Data Extraction:** The code first reads data from an Excel or CSV file, specifically filtering rows based on "Equipment Number" information. It then parses "Point" data to extract drawing numbers and CML (Computerized Maintenance Management) ID tags, creating a dictionary mapping drawing numbers to their respective CML tags.
+
+2. **PDF to Image Conversion:** The code identifies relevant PDF isometric drawings based on the extracted drawing numbers. It then converts these PDFs into PNG images, allowing for further image processing.
+
+3. **Template Matching:** The code uses template matching techniques to locate specific patterns (e.g., tag boxes) within the PNG images. This allows for the automatic identification of locations containing CML ID tags.
+
+4. **OCR & Text Extraction:** Using the EasyOCR library, the code performs OCR on identified regions within the images, extracting the text contained within (i.e., the CML ID tags). 
+
+5. **Data Filtering:** The extracted OCR results are then filtered based on the CML ID tags associated with each drawing number. Only results matching the expected tags are retained, providing a more accurate and relevant dataset.
+
+6. **Visualization & Highlighting:** Finally, the code visualizes the filtered results by highlighting the detected regions within the original PNG images. This provides a clear and intuitive way to identify the extracted information within the drawings.
+
+
 ## Usage
 
 To run the script, use the following command:
