@@ -44,7 +44,7 @@ graph TD
 
 ## Functionality Breakdown
 
-1. **Data Extraction:** The code first reads data from an Excel or CSV file, specifically filtering rows based on "Equipment Number" information. It then parses "Point" data to extract drawing numbers and CML (Computerized Maintenance Management) ID tags, creating a dictionary mapping drawing numbers to their respective CML tags.
+1. **Data Extraction:** The code first reads data from an Excel or CSV file. It then parses "Point" data to extract drawing numbers and CML (Computerized Maintenance Management) ID tags, creating a dictionary mapping drawing numbers to their respective CML tags.
 
 2. **PDF to Image Conversion:** The code identifies relevant PDF isometric drawings based on the extracted drawing numbers. It then converts these PDFs into PNG images, allowing for further image processing.
 
