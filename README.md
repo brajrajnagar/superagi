@@ -96,7 +96,7 @@ graph TD
     N --> O[End]
 
     style A fill:#f9f,stroke:#333,stroke-width:4px
-    style B fill:##0505fc,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    style B fill:#0505fc,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
     style C fill:#bbf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
     style D fill:#bbf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
     style E fill:#bbf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
