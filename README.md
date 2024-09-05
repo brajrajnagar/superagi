@@ -1,6 +1,3 @@
-Here's a README.md file for your project:
-
-```markdown
 # P & ID Automation Script
 
 This project automates the process of identifying and verifying components on Piping and Instrumentation Diagrams (P&IDs) or Isometric Drawings through a series of steps involving data extraction, image processing, and optical character recognition (OCR).
@@ -86,4 +83,3 @@ For any questions or feedback, please open an issue on the GitHub repository or 
 ---
 
 **Note:** Adjust paths, names, and contact information according to your project's specifics.
-```
